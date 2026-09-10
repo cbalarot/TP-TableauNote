@@ -15,8 +15,7 @@ class Ihm {
         int noteMinBTS = totalCoef * 10;
 
         float[] notes = {0,0,0,0,0,0,0};
-        float noteTotal = 0;
-        float moyenne = 0;
+        float noteTotal, moyenne;
 
         String mention = "";
 
@@ -106,7 +105,7 @@ class Ihm {
         }
 
         // Calcule de chaque note pondérée avec leur coef;
-        noteTotal += notes[0] * coefCulGeneral;
+        noteTotal = notes[0] * coefCulGeneral;
         noteTotal += notes[1] * coefAnglais;
         noteTotal += notes[2] * coefMaths;
         noteTotal += notes[3] * coefNetworking;
