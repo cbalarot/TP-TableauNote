@@ -1,6 +1,6 @@
 import clavier.In;
-import java.text.DecimalFormat;
 
+import java.text.DecimalFormat;
 
 class Ihm {
     static void main() {
@@ -14,7 +14,7 @@ class Ihm {
         int totalCoef = coefCulGeneral + coefAnglais + coefMaths + coefNetworking + coefMaintenance + coefCyber;
         int noteMinBTS = totalCoef * 10;
 
-        float[] notes = {0,0,0,0,0,0,0};
+        float[] notes = {0, 0, 0, 0, 0, 0, 0};
         float noteTotal, moyenne;
 
         boolean hasOptLang = false;
@@ -63,17 +63,17 @@ class Ihm {
                 {"Epreuve", "Durée", "Coefficient", "Type d'épreuve", ""},
                 {"Culture générale et expression", "4 heures", String.valueOf(coefCulGeneral), "Écrit", "Votre note : "},
                 {"Anglais", "Compréhension: 30 min sans prép & Expression 15 min sans prép", String.valueOf(coefAnglais), "CCF 2 Situations", "Votre note : "},
-                {"Mathématiques", "1 h par CCF",  String.valueOf(coefMaths), "CCF 2 situations", "Votre note : "},
-                {"Étude et conception de réseaux informatique", "6 heures",  String.valueOf(coefNetworking), "Écrit", "Votre note : "},
-                {"Exploitation et maintenance de réseaux informatiques", "",  String.valueOf(coefMaintenance), "CCF",  "Votre note : "},
-                {"Valorisation de la donnée et cybersécurité", "1 heure",  String.valueOf(coefCyber), "Oral",  "Votre note : "},
-                {"Langue vivante facultative", "15 minutes",  "/", "Oral",  "Option ? [y/n] : "},
-                {"", "",  "", ""},
-                {"", "",  "Total", "Note Min BTS", "Votre note total"},
-                {"", "",  String.valueOf(totalCoef), String.valueOf(noteMinBTS)},
+                {"Mathématiques", "1 h par CCF", String.valueOf(coefMaths), "CCF 2 situations", "Votre note : "},
+                {"Étude et conception de réseaux informatique", "6 heures", String.valueOf(coefNetworking), "Écrit", "Votre note : "},
+                {"Exploitation et maintenance de réseaux informatiques", "", String.valueOf(coefMaintenance), "CCF", "Votre note : "},
+                {"Valorisation de la donnée et cybersécurité", "1 heure", String.valueOf(coefCyber), "Oral", "Votre note : "},
+                {"Langue vivante facultative", "15 minutes", "/", "Oral", "Option ? [y/n] : "},
+                {"", "", "", ""},
+                {"", "", "Total", "Note Min BTS", "Votre note total"},
+                {"", "", String.valueOf(totalCoef), String.valueOf(noteMinBTS)},
         };
-        int[] colone_size = {0,0,0,0,0};
-        int i,j;
+        int[] colone_size = {0, 0, 0, 0, 0};
+        int i, j;
         //Trouve la taille de chaque colone
         for (String[] row : content) {
             i = 0;
@@ -89,16 +89,16 @@ class Ihm {
 
         //Dessin de notre tableau
         i = 0;
-        for  (String[] row : content) {
+        for (String[] row : content) {
             j = 0;
             for (String col : row) {
-                System.out.print(col+" ".repeat(colone_size[j] + 5 - col.length()));
+                System.out.print(col + " ".repeat(colone_size[j] + 5 - col.length()));
                 j++;
             }
 
             // Met a la ligne si pas d'input. Dans le cas d'une input le user fait deja entré pour valider ce qui crée automatiquement une nouvelle ligne
             if (i == 7) {
-              hasOptLang = In.readChar() == 'y';
+                hasOptLang = In.readChar() == 'y';
             } else if ((i < 8) && (i != 0)) {
                 notes[i - 1] = In.readFloat();
             } else if (i + 1 < content.length) {
@@ -135,9 +135,9 @@ class Ihm {
             if (moyenne >= 14) mention = " Félicitation vous avez la mention bien";
             if (moyenne >= 16) mention = " Félicitation vous avez la mention très bien";
 
-            System.out.print("Bravos ! Vous avez les BTS avec une moyenne de "+df.format(moyenne)+mention);
+            System.out.print("Bravos ! Vous avez les BTS avec une moyenne de " + df.format(moyenne) + mention);
         } else {
-            System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.",df.format(moyenne));
+            System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
         }
 
         if (moyenne > 20) System.out.println("Prochaine fois rentre tes notes correctement");
