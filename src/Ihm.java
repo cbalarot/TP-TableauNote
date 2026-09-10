@@ -128,7 +128,6 @@ class Ihm {
         }
 
         System.out.print(noteTotal);
-
         System.out.println("\n");
 
         if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
@@ -140,6 +139,9 @@ class Ihm {
         } else {
             System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.",df.format(moyenne));
         }
+
+        if (moyenne > 20) System.out.println("Prochaine fois rentre tes notes correctement");
+
 
         System.out.println("\n");
     }
