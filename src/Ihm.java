@@ -17,8 +17,9 @@ class Ihm {
         float[] notes = {0,0,0,0,0,0,0};
         float noteTotal, moyenne;
 
-        String mention = "";
+        boolean hasOptLang = false;
 
+        String mention = "";
         DecimalFormat df = new DecimalFormat("#.00");
 
 //
@@ -66,7 +67,7 @@ class Ihm {
                 {"Étude et conception de réseaux informatique", "6 heures",  String.valueOf(coefNetworking), "Écrit", "Votre note : "},
                 {"Exploitation et maintenance de réseaux informatiques", "",  String.valueOf(coefMaintenance), "CCF",  "Votre note : "},
                 {"Valorisation de la donnée et cybersécurité", "1 heure",  String.valueOf(coefCyber), "Oral",  "Votre note : "},
-                {"Langue vivante facultative", "15 minutes",  "/", "Oral",  "Votre note : "},
+                {"Langue vivante facultative", "15 minutes",  "/", "Oral",  "Option ? [y/n] : "},
                 {"", "",  "", ""},
                 {"", "",  "Total", "Note Min BTS", "Votre note total"},
                 {"", "",  String.valueOf(totalCoef), String.valueOf(noteMinBTS)},
@@ -91,15 +92,22 @@ class Ihm {
         for  (String[] row : content) {
             j = 0;
             for (String col : row) {
-                System.out.print(col+" ".repeat(colone_size[j] + 10 - col.length()));
+                System.out.print(col+" ".repeat(colone_size[j] + 5 - col.length()));
                 j++;
             }
 
             // Met a la ligne si pas d'input. Dans le cas d'une input le user fait deja entré pour valider ce qui crée automatiquement une nouvelle ligne
-            if ((i < 8) && (i != 0)) {
+            if (i == 7) {
+              hasOptLang = In.readChar() == 'y';
+            } else if ((i < 8) && (i != 0)) {
                 notes[i - 1] = In.readFloat();
-            } else if (i + 1 != content.length) {
+            } else if (i + 1 < content.length) {
                 System.out.println();
+                if (hasOptLang) {
+                    System.out.print("Quelle est ta note de langue vivante facultative? : ");
+                    notes[6] = In.readFloat();
+                    hasOptLang = false;
+                }
             }
             i++;
         }
@@ -112,9 +120,9 @@ class Ihm {
         noteTotal += notes[4] * coefMaintenance;
         noteTotal += notes[5] * coefCyber;
 
-
         moyenne = noteTotal / totalCoef;
 
+        // Ajout dans la note total les point bonus de la langue optionel
         if (notes[6] > 10) {
             noteTotal += notes[6] - 10;
         }
@@ -123,8 +131,8 @@ class Ihm {
 
         System.out.println("\n");
 
-        if (noteTotal >= noteMinBTS) {
-            if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien";
+        if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
+            if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien"; // On regarde les mentions
             if (moyenne >= 14) mention = " Félicitation vous avez la mention bien";
             if (moyenne >= 16) mention = " Félicitation vous avez la mention très bien";
 
