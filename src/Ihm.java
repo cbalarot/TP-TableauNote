@@ -123,14 +123,15 @@ class Ihm {
         System.out.println("\n");
 
         System.out.println(this.formatFinalMessage(moyenne));
-        System.out.println();
 
+
+        //Ratrapage
         float moyenne_pro = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
         if (moyenne > 10 || moyenne < 8 || moyenne_pro < 10) {
             return; // Pas de ratrapage, on sort du programme
         }
 
-
+        System.out.println();
         System.out.print("Voulez vous ratrapez l'anglais ? [y/n] : ");
         if (In.readChar() == 'y') {
             System.out.print("Quelle est votre nouvelle note en Anglais? : ");
@@ -189,12 +190,6 @@ class Ihm {
         System.out.println("\n"); // Sauter deux lignes
 
         System.out.println(this.formatFinalMessage(moyenne));
-
-        System.out.println(); // Sauter une ligne
-        if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
-
-
-        System.out.println("\n");
     }
 
     /**
