@@ -3,7 +3,7 @@ import clavier.In;
 import java.text.DecimalFormat;
 
 class Ihm {
-    public static void main(String[] args) {
+    public void main(String[] args) {
         int coefCulGeneral = 2;
         int coefAnglais = 3;
         int coefMaths = 2;
@@ -72,18 +72,8 @@ class Ihm {
                 {"", "", "Total", "Note Min BTS", "Votre note total"},
                 {"", "", String.valueOf(totalCoef), String.valueOf(noteMinBTS)},
         };
-        int[] colone_size = {0, 0, 0, 0, 0};
+        int[] colone_size = this.columMaxSize(content);
         int i, j;
-        //Trouve la taille de chaque colone
-        for (String[] row : content) {
-            i = 0;
-            for (String col : row) {
-                if (col.length() > colone_size[i]) {
-                    colone_size[i] = col.length();
-                }
-                i += 1;
-            }
-        }
 
         System.out.println();
 
@@ -225,5 +215,25 @@ class Ihm {
 
 
         System.out.println("\n");
+    }
+
+    /**
+     * Renvoie la taille max dans un tablau de chaque collone
+     * @param content
+     * @return Renvoie une liste dans laquel est la taille max de chacune des collones
+     */
+    private int[] columMaxSize(String[][] content) {
+        int i;
+        int[] colSize = {0, 0, 0, 0, 0};
+        for (String[] row : content) {
+            i = 0;
+            for (String col : row) {
+                if (col.length() > colSize[i]) {
+                    colSize[i] = col.length();
+                }
+                i++;
+            }
+        }
+        return colSize;
     }
 }
