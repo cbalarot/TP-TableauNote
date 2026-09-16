@@ -164,7 +164,7 @@ class Ihm {
         }
 
         if (!calculNeed) {
-            System.out.println("Vos notes ne se sont pas amélioré, cela ne sert a rien de recalculer une nouvelle moyennes vous n'avez toujours pas le BTS");
+            System.out.println("Vos notes ne se sont pas améliorées, cela ne sert à rien de recalculer une nouvelle moyenne, vous n'avez toujours pas le BTS");
             return;
         }
 
