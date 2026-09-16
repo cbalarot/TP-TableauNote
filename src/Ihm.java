@@ -122,23 +122,12 @@ class Ihm {
         System.out.print(noteTotal);
         System.out.println("\n");
 
-        if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
-            if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien"; // On regarde les mentions
-            if (moyenne >= 14) mention = " Félicitation vous avez la mention bien";
-            if (moyenne >= 16) mention = " Félicitation vous avez la mention très bien";
-
-            System.out.print("Bravos ! Vous avez les BTS avec une moyenne de " + df.format(moyenne) + mention);
-        } else {
-            System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
-        }
-
-        if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
+        System.out.println(this.formatFinalMessage(moyenne));
         System.out.println();
 
         float moyenne_pro = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
         if (moyenne > 10 || moyenne < 8 || moyenne_pro < 10) {
-            System.out.println("Pas de ratrappage possible ou pas nécessaire");
-            return;
+            return; // Pas de ratrapage, on sort du programme
         }
 
 
@@ -199,15 +188,7 @@ class Ihm {
         System.out.print(noteTotal);
         System.out.println("\n"); // Sauter deux lignes
 
-        if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
-            if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien"; // On regarde les mentions
-            if (moyenne >= 14) mention = " Félicitation vous avez la mention bien";
-            if (moyenne >= 16) mention = " Félicitation vous avez la mention très bien";
-
-            System.out.print("Bravos ! Vous avez les BTS avec une moyenne de " + df.format(moyenne) + mention);
-        } else {
-            System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
-        }
+        System.out.println(this.formatFinalMessage(moyenne));
 
         System.out.println(); // Sauter une ligne
         if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
@@ -235,5 +216,28 @@ class Ihm {
             }
         }
         return colSize;
+    }
+
+    /**
+     * Permet de crée le texte avec la mention et l'obtention du BTS
+     * @param moyenne La moyenne final de la personne
+     * @return Le texte à afficher deja formaté
+     */
+    private String formatFinalMessage(float moyenne) {
+        DecimalFormat df = new DecimalFormat("#.00");
+        String intro = moyenne >= 10 ? "Bravos ! Vous avez les BTS avec une moyenne de " : "Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme une moyenne de ";
+        String mention = "";
+
+        if (moyenne >= 12) {
+            mention = "\nFélicitation vous avez la mention assez bien";
+        }
+        if (moyenne >= 14) {
+            mention = "\nFélicitation vous avez la mention bien";
+        }
+        if (moyenne >= 16) {
+            mention = "\nFélicitation vous avez la mention très bien";
+        }
+
+        return intro + df.format(moyenne) + mention;
     }
 }
