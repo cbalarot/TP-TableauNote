@@ -145,7 +145,7 @@ class Ihm {
         System.out.println();
 
         float moyenne_tech = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
-        if ((moyenne > 10 && moyenne < 8) || moyenne_tech < 10) {
+        if (moyenne > 10 || moyenne < 8 || moyenne_tech < 10) {
             System.out.println("Pas de ratrappage possible ou pas nécessaire");
             return;
         }
