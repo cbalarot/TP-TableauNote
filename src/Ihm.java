@@ -197,7 +197,7 @@ class Ihm {
         }
 
         System.out.print(noteTotal);
-        System.out.println("\n");
+        System.out.println("\n"); // Sauter deux lignes
 
         if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
             if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien"; // On regarde les mentions
@@ -209,6 +209,7 @@ class Ihm {
             System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
         }
 
+        System.out.println(); // Sauter une ligne
         if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
 
 
@@ -218,7 +219,7 @@ class Ihm {
     /**
      * Renvoie la taille max dans un tablau de chaque collone
      *
-     * @param content
+     * @param content COntenue avec lignes + collones à traité
      * @return Renvoie une liste dans laquel est la taille max de chacune des collones
      */
     private int[] columMaxSize(String[][] content) {
