@@ -133,8 +133,8 @@ class Ihm {
         if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
         System.out.println();
 
-        float moyenne_tech = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
-        if (moyenne > 10 || moyenne < 8 || moyenne_tech < 10) {
+        float moyenne_pro = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
+        if (moyenne > 10 || moyenne < 8 || moyenne_pro < 10) {
             System.out.println("Pas de ratrappage possible ou pas nécessaire");
             return;
         }
