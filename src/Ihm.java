@@ -200,7 +200,7 @@ class Ihm {
     /**
      * Renvoie la taille max dans un tablau de chaque collone
      *
-     * @param content COntenue avec lignes + collones à traité
+     * @param content Contenue avec lignes + collones à traité
      * @return Renvoie une liste dans laquel est la taille max de chacune des collones
      */
     private int[] columMaxSize(String[][] content) {
