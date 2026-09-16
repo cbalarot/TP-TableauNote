@@ -24,40 +24,40 @@ class Ihm {
         DecimalFormat df = new DecimalFormat("#.00");
 
 
-//
-//
-//        String space = "-".repeat(100);
-//        System.out.println("Épreuve"+"\t".repeat(8)+"Durée\t\t\t\t\t\tCoefficient\t\t\tType d’épreuve");
-//        System.out.println("=".repeat(100));
-//        System.out.println("Culture générale et expression\t\t4 heures\t\t\t\t\t"+coefCulGeneral+"\t\t\t\t\tÉcrit");
-//        System.out.println(space);
-//
-//        System.out.println("Anglais\t\t\t\t\t\t\t\tCompréhension:\t\t\t\t"+coefAnglais+"\t\t\t\t\tCCF 2 Situations");
-//        System.out.println("\t\t\t\t\t\t\t\t\t30 min sans préparation");
-//        System.out.println("\t\t\t\t\t\t\t\t\tExpression :");
-//        System.out.println("\t\t\t\t\t\t\t\t\t15 min sans préparation");
-//        System.out.println(space);
-//
-//        System.out.println("Mathématiques\t\t\t\t\t\t1 h par CCF\t\t\t\t\t"+coefMaths+"\t\t\t\t\tCCF 2 situations");
-//        System.out.println(space);
-//
-//        System.out.println("Étude et conception");
-//        System.out.println("de réseaux\t\t\t\t\t\t\t6 heures\t\t\t\t\t"+coefNetworking+"\t\t\t\t\tÉcrit");
-//        System.out.println("informatiques");
-//        System.out.println(space);
-//
-//        System.out.println("Exploitation et");
-//        System.out.println("maintenance des réseaux\t\t\t\t\t\t\t\t\t\t\t"+coefMaintenance+"\t\t\t\t\tCCF");
-//        System.out.println("informatiques");
-//        System.out.println(space);
-//
-//        System.out.println("Valorisation de la");
-//        System.out.println("donnée et\t\t\t\t\t\t\t1 heure\t\t\t\t\t\t"+coefCyber+"\t\t\t\t\tOral");
-//        System.out.println("cybersécurité");
-//        System.out.println(space);
-//
-//        System.out.println("Langue vivante\t\t\t\t\t\t15 minutes\t\t\t\t\tPoints au\t\t\tOral");
-//        System.out.println("facultative\t\t\t\t\t\t\t\t\t\t\t\t\t\tdessus de 10");
+        /*
+        String space = "-".repeat(100);
+        System.out.println("Épreuve"+"\t".repeat(8)+"Durée\t\t\t\t\t\tCoefficient\t\t\tType d’épreuve");
+        System.out.println("=".repeat(100));
+        System.out.println("Culture générale et expression\t\t4 heures\t\t\t\t\t"+coefCulGeneral+"\t\t\t\t\tÉcrit");
+        System.out.println(space);
+
+        System.out.println("Anglais\t\t\t\t\t\t\t\tCompréhension:\t\t\t\t"+coefAnglais+"\t\t\t\t\tCCF 2 Situations");
+        System.out.println("\t\t\t\t\t\t\t\t\t30 min sans préparation");
+        System.out.println("\t\t\t\t\t\t\t\t\tExpression :");
+        System.out.println("\t\t\t\t\t\t\t\t\t15 min sans préparation");
+        System.out.println(space);
+
+        System.out.println("Mathématiques\t\t\t\t\t\t1 h par CCF\t\t\t\t\t"+coefMaths+"\t\t\t\t\tCCF 2 situations");
+        System.out.println(space);
+
+        System.out.println("Étude et conception");
+        System.out.println("de réseaux\t\t\t\t\t\t\t6 heures\t\t\t\t\t"+coefNetworking+"\t\t\t\t\tÉcrit");
+        System.out.println("informatiques");
+        System.out.println(space);
+
+        System.out.println("Exploitation et");
+        System.out.println("maintenance des réseaux\t\t\t\t\t\t\t\t\t\t\t"+coefMaintenance+"\t\t\t\t\tCCF");
+        System.out.println("informatiques");
+        System.out.println(space);
+
+        System.out.println("Valorisation de la");
+        System.out.println("donnée et\t\t\t\t\t\t\t1 heure\t\t\t\t\t\t"+coefCyber+"\t\t\t\t\tOral");
+        System.out.println("cybersécurité");
+        System.out.println(space);
+
+        System.out.println("Langue vivante\t\t\t\t\t\t15 minutes\t\t\t\t\tPoints au\t\t\tOral");
+        System.out.println("facultative\t\t\t\t\t\t\t\t\t\t\t\t\t\tdessus de 10");
+        */
 
 
         //Affichage
