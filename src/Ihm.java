@@ -3,8 +3,7 @@ import clavier.In;
 import java.text.DecimalFormat;
 
 class Ihm {
-
-    static void main() {
+    public static void main(String[] args) {
         int coefCulGeneral = 2;
         int coefAnglais = 3;
         int coefMaths = 2;
@@ -176,9 +175,9 @@ class Ihm {
         }
         System.out.println();
 
-        boolean calculNeed=false;
+        boolean calculNeed = false;
         if (angl_ratrapage > notes[1]) {
-            notes[1]  = angl_ratrapage;
+            notes[1] = angl_ratrapage;
             calculNeed = true;
         }
         if (cult_ratrapage > notes[0]) {
@@ -186,7 +185,7 @@ class Ihm {
             calculNeed = true;
         }
         if (maths_ratrapage > notes[2]) {
-            notes[2]  = maths_ratrapage;
+            notes[2] = maths_ratrapage;
             calculNeed = true;
         }
 
