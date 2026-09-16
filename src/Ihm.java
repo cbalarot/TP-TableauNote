@@ -20,10 +20,6 @@ class Ihm {
 
         boolean hasOptLang = false;
 
-        String mention = "";
-        DecimalFormat df = new DecimalFormat("#.00");
-
-
         /*
         String space = "-".repeat(100);
         System.out.println("Épreuve"+"\t".repeat(8)+"Durée\t\t\t\t\t\tCoefficient\t\t\tType d’épreuve");
