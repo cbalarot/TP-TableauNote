@@ -3,6 +3,7 @@ import clavier.In;
 import java.text.DecimalFormat;
 
 class Ihm {
+
     static void main() {
         int coefCulGeneral = 2;
         int coefAnglais = 3;
@@ -140,7 +141,88 @@ class Ihm {
             System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
         }
 
-        if (moyenne > 20) System.out.println("Prochaine fois rentre tes notes correctement");
+        if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
+        System.out.println();
+
+        float moyenne_tech = notes[3] * coefNetworking + notes[4] * coefMaintenance + notes[5] * coefCyber;
+        if ((moyenne > 10 && moyenne < 8) || moyenne_tech < 10) {
+            System.out.println("Pas de ratrappage possible ou pas nécessaire");
+            return;
+        }
+
+        float angl_ratrapage = 0;
+        float cult_ratrapage = 0;
+        float maths_ratrapage = 0;
+
+
+        System.out.print("Voulez vous ratrapez l'anglais ? [y/n] : ");
+        if (In.readChar() == 'y') {
+            System.out.print("Quelle est votre nouvelle note en Anglais? : ");
+            angl_ratrapage = In.readFloat();
+        }
+        System.out.println();
+
+        System.out.print("Voulez vous ratrapez la culture général ? [y/n] : ");
+        if (In.readChar() == 'y') {
+            System.out.print("Quelle est votre nouvelle note en culture général? : ");
+            cult_ratrapage = In.readFloat();
+        }
+        System.out.println();
+
+        System.out.print("Voulez vous ratrapez les mathématiques ? [y/n] : ");
+        if (In.readChar() == 'y') {
+            System.out.print("Quelle est votre nouvelle note en Mathématiques? : ");
+            maths_ratrapage = In.readFloat();
+        }
+        System.out.println();
+
+        boolean calculNeed=false;
+        if (angl_ratrapage > notes[1]) {
+            notes[1]  = angl_ratrapage;
+            calculNeed = true;
+        }
+        if (cult_ratrapage > notes[0]) {
+            notes[0] = cult_ratrapage;
+            calculNeed = true;
+        }
+        if (maths_ratrapage > notes[2]) {
+            notes[2]  = maths_ratrapage;
+            calculNeed = true;
+        }
+
+        if (!calculNeed) {
+            System.out.println("Vos notes ne se sont pas amélioré, cela ne sert a rien de recalculer une nouvelle moyennes vous n'avez toujours pas le BTS");
+            return;
+        }
+
+        noteTotal = notes[0] * coefCulGeneral;
+        noteTotal += notes[1] * coefAnglais;
+        noteTotal += notes[2] * coefMaths;
+        noteTotal += notes[3] * coefNetworking;
+        noteTotal += notes[4] * coefMaintenance;
+        noteTotal += notes[5] * coefCyber;
+
+        moyenne = noteTotal / totalCoef;
+
+        // Ajout dans la note total les point bonus de la langue optionel
+        if (notes[6] > 10) {
+            noteTotal += notes[6] - 10;
+        }
+
+        System.out.print(noteTotal);
+        System.out.println("\n");
+
+        if (noteTotal >= noteMinBTS) { //Si BTS Obtenue =>
+            if (moyenne >= 12) mention = " Félicitation vous avez la mention assez bien"; // On regarde les mentions
+            if (moyenne >= 14) mention = " Félicitation vous avez la mention bien";
+            if (moyenne >= 16) mention = " Félicitation vous avez la mention très bien";
+
+            System.out.print("Bravos ! Vous avez les BTS avec une moyenne de " + df.format(moyenne) + mention);
+        } else {
+            System.out.printf("Désolé... Vous n'avez pas votre BTS. Vous avez tout de meme %s de moyenne.", df.format(moyenne));
+        }
+
+        if (moyenne > 20) System.out.println("C'est pas bien de tricher...");
 
 
         System.out.println("\n");
