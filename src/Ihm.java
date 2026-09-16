@@ -16,11 +16,13 @@ class Ihm {
 
         float[] notes = {0, 0, 0, 0, 0, 0, 0};
         float noteTotal, moyenne;
+        float angl_ratrapage = 0, cult_ratrapage = 0, maths_ratrapage = 0;
 
         boolean hasOptLang = false;
 
         String mention = "";
         DecimalFormat df = new DecimalFormat("#.00");
+
 
 //
 //
@@ -139,10 +141,6 @@ class Ihm {
             return;
         }
 
-        float angl_ratrapage = 0;
-        float cult_ratrapage = 0;
-        float maths_ratrapage = 0;
-
 
         System.out.print("Voulez vous ratrapez l'anglais ? [y/n] : ");
         if (In.readChar() == 'y') {
@@ -219,6 +217,7 @@ class Ihm {
 
     /**
      * Renvoie la taille max dans un tablau de chaque collone
+     *
      * @param content
      * @return Renvoie une liste dans laquel est la taille max de chacune des collones
      */
